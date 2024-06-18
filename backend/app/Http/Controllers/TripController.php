@@ -26,6 +26,7 @@ class TripController extends Controller
             'destination_name'
         ]));
 
+        TripCreated::dispatch($trip, $request->user());
 
         return $trip;
     }
@@ -60,6 +61,8 @@ class TripController extends Controller
 
         $trip->load('driver.user');
 
+        TripAccepted::dispatch($trip, $trip->user);
+
         return $trip;
     }
 
@@ -72,6 +75,7 @@ class TripController extends Controller
 
         $trip->load('driver.user');
 
+        TripStarted::dispatch($trip, $trip->user);
 
         return $trip;
     }
@@ -85,6 +89,7 @@ class TripController extends Controller
 
         $trip->load('driver.user');
 
+        TripEnded::dispatch($trip, $trip->user);
 
         return $trip;
     }
@@ -102,6 +107,7 @@ class TripController extends Controller
 
         $trip->load('driver.user');
 
+        TripLocationUpdated::dispatch($trip, $trip->user);
 
         return $trip;
     }
