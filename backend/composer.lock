@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "465de3f01f59e750e0ca17d391602ece",
+    "content-hash": "25502eaac3def0183caf0e9a8988f515",
     "packages": [
         {
             "name": "brick/math",
@@ -1339,16 +1339,16 @@
         },
         {
             "name": "infobip/infobip-api-php-client",
-            "version": "5.1.4",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/infobip/infobip-api-php-client.git",
-                "reference": "171a5e00765c6c28ea64c50c0b004680978ae3bc"
+                "reference": "3af577933300fbb608b88e9ec5dfda025d16b8b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/infobip/infobip-api-php-client/zipball/171a5e00765c6c28ea64c50c0b004680978ae3bc",
-                "reference": "171a5e00765c6c28ea64c50c0b004680978ae3bc",
+                "url": "https://api.github.com/repos/infobip/infobip-api-php-client/zipball/3af577933300fbb608b88e9ec5dfda025d16b8b8",
+                "reference": "3af577933300fbb608b88e9ec5dfda025d16b8b8",
                 "shasum": ""
             },
             "require": {
@@ -1400,9 +1400,9 @@
             ],
             "support": {
                 "issues": "https://github.com/infobip/infobip-api-php-client/issues",
-                "source": "https://github.com/infobip/infobip-api-php-client/tree/5.1.4"
+                "source": "https://github.com/infobip/infobip-api-php-client/tree/5.0.0"
             },
-            "time": "2023-06-19T10:41:03+00:00"
+            "time": "2023-03-02T08:16:01+00:00"
         },
         {
             "name": "laravel-notification-channels/twilio",
@@ -9043,16 +9043,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.2.2",
+            "version": "11.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3e1843a58adc9c433ee6170bdee7d615f7ccc20b"
+                "reference": "8475044fbb0af57c8daea06bcfe21e2785401f97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3e1843a58adc9c433ee6170bdee7d615f7ccc20b",
-                "reference": "3e1843a58adc9c433ee6170bdee7d615f7ccc20b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8475044fbb0af57c8daea06bcfe21e2785401f97",
+                "reference": "8475044fbb0af57c8daea06bcfe21e2785401f97",
                 "shasum": ""
             },
             "require": {
@@ -9076,7 +9076,7 @@
                 "sebastian/comparator": "^6.0",
                 "sebastian/diff": "^6.0",
                 "sebastian/environment": "^7.0",
-                "sebastian/exporter": "^6.0",
+                "sebastian/exporter": "^6.1.2",
                 "sebastian/global-state": "^7.0",
                 "sebastian/object-enumerator": "^6.0",
                 "sebastian/type": "^5.0",
@@ -9123,7 +9123,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.2.2"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.2.3"
             },
             "funding": [
                 {
@@ -9139,7 +9139,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-06-15T09:14:53+00:00"
+            "time": "2024-06-19T05:31:11+00:00"
         },
         {
             "name": "sebastian/cli-parser",
