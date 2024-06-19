@@ -69,13 +69,15 @@ const handleLogin = () => {
 
 const handleVerification = () => {
      axios.post('http://127.0.0.1:8000/api/login/verify', {
-
         phone: credentials.phone.replaceAll(' ', '').replace('(', '').replace(')', '').replace('-', ''),
         login_code: credentials.login_code
      })
-     .then((response) => {
+         .then((response) => {
+         console.log(response.data) //auth
+         })
+        .catch((response) => {
         console.error(error)
         alert(error.response.data.message)
-     })
+        })
 }
 </script>
