@@ -34,23 +34,34 @@
 
 <script setup>
 //import { vMaska } from 'maska'
-import { reactive, ref } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import axios from 'axios'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const credentials = reactive({
-    phone: null
+    phone: null,
+    login_code: null
 })
 
 const waitingOnVerification = ref(false) //PROBLEMA
 
+onMounted(() => {
+    if (localStorage.getItem('token')) {
+        router.push({
+            name: 'landing'
+        })
+    }
+})
+
 const getFormattedCredentials = () => {
     // Eliminar espacios, paréntesis y guiones del número de teléfono
-    const phone = credentials.phone.replaceAll(' ', '').replace('(', '').replace(')', '').replace('-', '');
     return {
-        phone: formattedPhone,
-        login_code: credentials.login_code
-    };
-};
+            phone: credentials.phone.replaceAll(' ', '').replace('(', '').replace(')', '').replace('-', ''),
+            login_code: credentials.login_code
+    }
+}
 
 const handleLogin = () => {
     axios.post('http://127.0.0.1:8000/api/login', {
@@ -73,7 +84,11 @@ const handleVerification = () => {
         login_code: credentials.login_code
      })
          .then((response) => {
-         console.log(response.data) //auth
+             console.log(response.data) //auth
+             localStorage.setItem('token', response.data)
+             router.push({
+                name: 'landing'
+             })
          })
         .catch((response) => {
         console.error(error)
