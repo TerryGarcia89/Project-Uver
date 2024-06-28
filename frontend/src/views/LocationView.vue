@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 to-pink-500">
     <div class="bg-white p-6 rounded-lg shadow-md max-w-md w-full">
-      <h1 class="text-3xl font-semibold mb-6 text-center text-gray-800">Uber-like App</h1>
+      <h1 class="text-3xl font-semibold mb-6 text-center text-gray-800">Uver App</h1>
 
-      <input id="autocomplete" type="text" placeholder="Enter a destination"
+      <input id="autocomplete" type="text" placeholder="A dónde quieres ir?"
         class="w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:outline-none focus:border-purple-500 mb-4">
 
       <button @click="searchRoute"
@@ -37,7 +37,7 @@ export default {
   methods: {
     initMap() {
       const loader = new Loader({
-        apiKey: "YOUR_GOOGLE_MAPS_API_KEY",
+        apiKey: "AIzaSyDb7qCYiFIkmotwatMiwU61Fk3LsJr3zuw",
         version: "weekly",
         libraries: ["places", "directions"]
       });
