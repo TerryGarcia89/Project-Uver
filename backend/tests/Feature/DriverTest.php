@@ -31,7 +31,7 @@ class DriverTest extends TestCase
             'make' => 'Toyota',
             'model' => 'Camry',
             'color' => 'Blue',
-            'license_plate' => 'XYZ123'
+            'license_plate' => 'XYZ423'
         ]);
     }
 }
