@@ -22,6 +22,25 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
+import http from '@/helpers/http'
+
+const handleStartDriving = () => {
+    http().get('/api/driver')
+        .then((response) => {
+            if (response.data.driver) {
+                router.push({
+                    name: 'standby'
+                })
+            } else {
+                router.push({
+                    name: 'driver'
+                })
+            }
+        })
+        .catch((error) => {
+            console.error(error)
+        })
+}
 
 const router = useRouter()
 
