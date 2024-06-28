@@ -1,9 +1,18 @@
 <template>
-  <div class="app-container">
-    <h1 class="app-title">Uber-like App</h1>
-    <input id="autocomplete" type="text" placeholder="Enter a destination" />
-    <button @click="searchRoute">Buscar Viaje</button>
-    <div id="map"></div>
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 to-pink-500">
+    <div class="bg-white p-6 rounded-lg shadow-md max-w-md w-full">
+      <h1 class="text-3xl font-semibold mb-6 text-center text-gray-800">Uber-like App</h1>
+
+      <input id="autocomplete" type="text" placeholder="Enter a destination"
+        class="w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:outline-none focus:border-purple-500 mb-4">
+
+      <button @click="searchRoute"
+        class="w-full px-4 py-2 bg-purple-500 text-white rounded-md shadow-sm hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
+        Buscar Viaje
+      </button>
+
+      <div id="map" class="mt-4 h-96 bg-gray-200 rounded-lg"></div>
+    </div>
   </div>
 </template>
 
@@ -28,7 +37,7 @@ export default {
   methods: {
     initMap() {
       const loader = new Loader({
-        apiKey: "AIzaSyDb7qCYiFIkmotwatMiwU61Fk3LsJr3zuw",
+        apiKey: "YOUR_GOOGLE_MAPS_API_KEY",
         version: "weekly",
         libraries: ["places", "directions"]
       });
@@ -43,11 +52,11 @@ export default {
           this.directionsService = new google.maps.DirectionsService();
           this.directionsRenderer = new google.maps.DirectionsRenderer({
             map: this.map,
-            suppressMarkers: true, // Suprime los marcadores de inicio y fin predeterminados
-            preserveViewport: true, // Mantiene el zoom y la posición actuales del mapa
+            suppressMarkers: true,
+            preserveViewport: true,
             polylineOptions: {
-              strokeColor: "#1a73e8", // Color de la línea de la ruta
-              strokeWeight: 6, // Grosor de la línea de la ruta
+              strokeColor: "#1a73e8",
+              strokeWeight: 6,
             },
           });
 
@@ -105,7 +114,6 @@ export default {
         if (status === google.maps.DirectionsStatus.OK) {
           this.directionsRenderer.setDirections(result);
 
-          // Ajusta el zoom y la posición del mapa para mostrar la ruta
           const bounds = new google.maps.LatLngBounds();
           result.routes[0].legs.forEach((leg) => {
             leg.steps.forEach((step) => {
@@ -125,6 +133,8 @@ export default {
 </script>
 
 <style>
+/* Optional: You can remove this style block if using Tailwind CSS for styling */
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -133,8 +143,7 @@ export default {
 
 #map {
   height: 400px;
-  width: 400px;
-  background-color: #f0f0f0;
+  width: 100%; /* Adjust as needed */
 }
 
 #autocomplete {
@@ -143,10 +152,11 @@ export default {
   margin: 10px auto;
   display: block;
   background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 button {
-  display: block;
   width: 80%;
   padding: 10px;
   margin: 10px auto;
